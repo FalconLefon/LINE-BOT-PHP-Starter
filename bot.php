@@ -11,7 +11,7 @@ curl -X POST \
 -H 'Content-Type:application/json' \
 -H 'Authorization: Bearer {$access_token}' \
 -d '{
-    "to": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "to": "Cherprang",
     "messages":[
         {
             "type":"text",
