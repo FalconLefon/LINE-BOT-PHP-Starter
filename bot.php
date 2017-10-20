@@ -6,24 +6,6 @@ $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
 // Validate parsed JSON data
-
-curl -X POST \
--H 'Content-Type:application/json' \
--H 'Authorization: Bearer {$access_token}' \
--d '{
-    "to": "Cherprang",
-    "messages":[
-        {
-            "type":"text",
-            "text":"Hello, world1"
-        },
-        {
-            "type":"text",
-            "text":"Hello, world2"
-        }
-    ]
-}' https://api.line.me/v2/bot/message/push
-
 if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
