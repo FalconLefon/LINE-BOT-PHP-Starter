@@ -9,7 +9,7 @@ $events = json_decode($content, true);
 
 curl -X POST \
 -H 'Content-Type:application/json' \
--H 'Authorization: Bearer {ENTER_ACCESS_TOKEN}' \
+-H 'Authorization: Bearer {$access_token}' \
 -d '{
     "to": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     "messages":[
