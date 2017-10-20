@@ -13,7 +13,7 @@ if (!is_null($events['events'])) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'สวัสดีครับ') {
 			// Get text sent
-			$text = $event['message']['สวัสดีค่ะ'];
+			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
@@ -22,17 +22,7 @@ if (!is_null($events['events'])) {
 				'type' => 'text',
 				'text' => $text
 			];
-                if ($event['type'] == 'message' && $event['message']['type'] == 'เป็นยังไงบ้างครับ') {
-			// Get text sent
-			$text = $event['message']['สบายดีค่ะ'];
-			// Get replyToken
-			$replyToken = $event['replyToken'];
-
-			// Build message to reply back
-			$messages = [
-				'type' => 'text',
-				'text' => $text
-			];
+			
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
