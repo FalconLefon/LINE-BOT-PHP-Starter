@@ -11,9 +11,9 @@ if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
 		// Reply only when message sent is in 'text' format
-		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
+		if ($event['type'] == 'message' && $event['message']['type'] == 'สวัสดีครับ') {
 			// Get text sent
-			$text = $event['message']['text'];
+			$text = $event['message']['สวัสดีค่ะ'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
