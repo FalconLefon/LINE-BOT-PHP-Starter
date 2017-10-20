@@ -4,23 +4,6 @@ $proxy = 'velodrome.usefixie.com:80';
 $proxyauth = 'fixie:ImSMlF0rtGuUy1s';
 // Get POST body content
 $content = file_get_contents('php://input');
-
-
-$arrJson = json_decode($content, true);
- 
-$strUrl = "https://api.line.me/v2/bot/message/reply";
- 
-$arrHeader = array();
-$arrHeader[] = "Content-Type: application/json";
-$arrHeader[] = "Authorization: Bearer {$strAccessToken}";
- 
-if($arrJson['events'][0]['message']['text'] == "สวัสดีครับ"){
-  $arrPostData = array();
-  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
-  $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "สวัสดีค่ะ;
-	
-	
 // Parse JSON
 $events = json_decode($content, true);
 // Validate parsed JSON data
