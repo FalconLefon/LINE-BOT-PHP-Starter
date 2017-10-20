@@ -1,7 +1,6 @@
 <?php
 $access_token = '6HIBflXu2vlniI4JKQaiitIOyRpn2gP+NYSBdmiM2Y1Qf9EoOUQWhypMEAjbayMw0lrbLzc0A/sL/PU7legz0ouclSd6Kr3ILDtlFRoh0rzX4nP4Q5aseoGViP1oe+N2x2nVibI9xEU+JkEo9dofTQdB04t89/1O/w1cDnyilFU=';
-$proxy = 'velodrome.usefixie.com:80';
-$proxyauth = 'fixie:ImSMlF0rtGuUy1s';
+
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
@@ -16,13 +15,14 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
-
+			$userId = $event['source']['userId'];
+			$id = $event['message']['id'];
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => $text
-			];
-
+				'text' => $id,
+				];
+			
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
@@ -49,3 +49,10 @@ if (!is_null($events['events'])) {
 	}
 }
 echo "OK";
+
+
+
+
+$access_token = '6HIBflXu2vlniI4JKQaiitIOyRpn2gP+NYSBdmiM2Y1Qf9EoOUQWhypMEAjbayMw0lrbLzc0A/sL/PU7legz0ouclSd6Kr3ILDtlFRoh0rzX4nP4Q5aseoGViP1oe+N2x2nVibI9xEU+JkEo9dofTQdB04t89/1O/w1cDnyilFU=';
+$proxy = 'velodrome.usefixie.com:80';
+$proxyauth = 'fixie:ImSMlF0rtGuUy1s';
