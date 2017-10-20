@@ -13,13 +13,13 @@ if (!is_null($events['events'])) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
-			$text = $event['message']['สวัสดีค่ะ'];
+			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
 			$messages = [
-				'type' => 'สวัสดีครับ',
+				'type' => 'text',
 				'text' => $text
 			];
 
