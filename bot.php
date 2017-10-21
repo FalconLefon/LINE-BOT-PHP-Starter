@@ -1,6 +1,7 @@
 <?php
 $access_token = '6HIBflXu2vlniI4JKQaiitIOyRpn2gP+NYSBdmiM2Y1Qf9EoOUQWhypMEAjbayMw0lrbLzc0A/sL/PU7legz0ouclSd6Kr3ILDtlFRoh0rzX4nP4Q5aseoGViP1oe+N2x2nVibI9xEU+JkEo9dofTQdB04t89/1O/w1cDnyilFU=';
-
+$proxy = 'velodrome.usefixie.com:80';
+$proxyauth = 'fixie:ImSMlF0rtGuUy1s';
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
@@ -52,7 +53,3 @@ echo "OK";
 
 
 
-
-$access_token = '6HIBflXu2vlniI4JKQaiitIOyRpn2gP+NYSBdmiM2Y1Qf9EoOUQWhypMEAjbayMw0lrbLzc0A/sL/PU7legz0ouclSd6Kr3ILDtlFRoh0rzX4nP4Q5aseoGViP1oe+N2x2nVibI9xEU+JkEo9dofTQdB04t89/1O/w1cDnyilFU=';
-$proxy = 'velodrome.usefixie.com:80';
-$proxyauth = 'fixie:ImSMlF0rtGuUy1s';
